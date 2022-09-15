@@ -1,4 +1,7 @@
 #include <iostream>
+#include <ctime>
+#include <assert.h>
+#include "InsertRecur.h"
 #include "Insert.h"
 using namespace std;
 
@@ -11,6 +14,8 @@ int main(){
 
     int size;
     bool sorted; 
+    string indent= "|";
+    //int count = 0;
 
     cout << "Enter Array Size: ";
     cin >> size;
@@ -69,6 +74,12 @@ int main(){
             break;
 
             case 3:
+
+                InsertRecur(/*indent,*/ array, size);
+
+            break;
+
+            case 4:
                 cout << "Until next time..." << endl;
                 exit(1);
             break;
@@ -88,12 +99,15 @@ int main(){
             cout << "Yes" << endl;
         else
             cout << "No" << endl; 
+        //assert(sorted);
+        //++count;
 
     }
 
 
-
-
+    cout << endl;
+    cout << "Program Exited Succesfully" << endl;
+    cout << endl;
 
     delete [] array;
     //delete [] array1;
@@ -108,7 +122,8 @@ int Menu(){
     cout << "Sorting Algorithms" << endl;
     cout << "1 - Insert Sort" << endl;
     cout << "2 - Merge Sort" << endl;
-    cout << "3 - Quit" << endl;
+    cout << "3 - Recursive Insert Sort" << endl;
+    cout << "4 - Quit" << endl;
     
     cout << endl;
 
